@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Noto+Serif+SC:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-rounded, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-serif: "Noto Serif SC", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F5F2EB] text-[#3A3532] font-sans;
+    /* A subtle paper texture effect can be added via background-image if needed, but a solid warm color is safer for performance */
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 90, 80, 0.2);
+    border-radius: 20px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(100, 90, 80, 0.4);
+  }
+  
+  .film-grain {
+    position: relative;
+  }
+  .film-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.015;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    z-index: 9999;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Learning Tracker",
+  "description": "A personalized learning tracker with a warm, classic film aesthetic, featuring a Star Map, Growth Curve, and Black Box for emotional release.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
